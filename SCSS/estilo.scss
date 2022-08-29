@@ -1,0 +1,167 @@
+$colores:(
+    color-rosa: #f7dad9,
+    color-marron: #5D534A,
+    color-azul: #748DA6,
+    color-anaranjado: #FFF5DA,
+    color-celeste: #9CB4CC,
+);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin titulo($tamaño, $padding){
+    text-align: center;
+    color:  map-get($colores, color-marron);
+    font-family: 'Courgette', cursive;
+    font-size: $tamaño;
+    padding: $padding;
+    font-weight: bolder;
+}
+header{
+    grid-row: 1/3;
+    grid-column: 1/5;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    background-color: map-get($colores, color-rosa);
+    h1{
+        @include titulo(3rem, 0.4rem);
+    }
+    .colorNavbar{
+        background-color: map-get($colores, color-azul)!important;
+        font-family: 'Raleway', sans-serif;
+    }
+    .nav-link{
+        color:map-get($colores, color-rosa)!important;
+        &:hover{
+            color:map-get($colores, color-marron)!important;
+        }
+    }
+}
+main{
+    width: 100%;
+    background-image: linear-gradient(to bottom,map-get($colores, color-rosa), map-get($colores, color-anaranjado));
+    h2{
+        @include titulo(2rem, 1rem);
+        .titulo{
+            color: map-get($colores, color-marron);
+        }
+    }
+    .titulo-index{
+        text-align: center;
+        color:  map-get($colores, color-marron);
+        font-family: 'Courgette', cursive;
+        font-size: 2rem;
+        padding: 1rem;
+        font-weight: bolder;
+    }
+    .background-video{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .centrado{
+        display: block;
+        text-align: center;
+        font-weight: bolder;
+        margin: 0rem auto;            
+        padding: 1rem;
+    }
+    .ceroCincoPadding{
+        padding: 2rem 0rem;
+        .cajaIndex{
+            display: block;
+            width: 90%;
+            height: auto;
+            padding: 2rem;
+            border: 0.7rem map-get($colores, color-celeste) solid;
+            text-align: justify;
+            overflow: hidden;
+            margin: 0rem auto;
+            p{
+                line-height: 1.5; /*separa los renglones de un parrafo para que se mas visible*/
+                font-family: 'Raleway', sans-serif;
+            }
+            .img-center{
+                display:block;
+                text-align: center;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    }
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+        padding: 2rem;
+        text-align: justify;
+        img{
+            padding: 1rem;
+        }
+    }
+    .productos{
+        display: grid;
+        border: 0.7rem map-get($colores, color-celeste) solid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin: 2.5rem 3rem 0rem 3rem;
+        // grid-gap: 1fr;
+        // align-items:center;
+        // text-align: center;
+        // justify-content: center;
+        // padding: 2rem;
+        // grid-template-areas:
+        // "ad be cf"
+        // "ad be cf"
+        // "g h i"
+        // ;
+        .card{
+            border: map-get($colores, color-celeste) solid;
+            border-width: 0.5rem;
+            background-color: transparent;
+            font-family: 'Raleway', sans-serif;
+            color:  map-get($colores, color-marron);
+            margin: 2rem auto;
+            .btn-cyc{
+                background-color: map-get($colores, color-celeste);
+            }
+        }
+    }
+    .formulario{
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+        padding: 2rem;
+        text-align: justify;
+        border-color: map-get($colores, color-celeste) solid;
+    }
+}
+footer{
+    align-items: center;
+    width: 100%;
+    background-color: map-get($colores, color-azul);
+    h5{
+        font-family: 'Courgette', cursive;
+        padding: 1rem;
+        color: map-get($colores, color-rosa);
+        text-align: start;
+        margin: 0rem!important;
+    .sinMargin{
+        margin: 0rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        }
+    }
+}
+
+
+
